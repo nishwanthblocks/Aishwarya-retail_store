@@ -43,8 +43,8 @@ function displayProductDetail() {
 
     if (product) {
         document.getElementById('product-detail').innerHTML = `
-            <h2>${product.name}</h2>
-            <p>Price: $${product.price}</p>
+            <h2>Rs{product.name}</h2>
+            <p>Price: $Rs{product.price}</p>
             <p>Description: A great product.</p>
         `;
     }
@@ -72,9 +72,9 @@ function displayCartItems() {
     } else {
         cartItems.innerHTML = cart.map((item, index) => `
             <div>
-                <h3>${item.name}</h3>
-                <p>Price: $${item.price}</p>
-                <button onclick="removeFromCart(${index})">Remove</button>
+                <h3>Rs{item.name}</h3>
+                <p>Price: $Rs{item.price}</p>
+                <button onclick="removeFromCart(Rs{index})">Remove</button>
             </div>
         `).join('');
     }
@@ -92,7 +92,7 @@ function updateCartLink() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartLink = document.getElementById('cart-link');
     if (cartLink) {
-        cartLink.innerText = `Cart (${cart.length})`;
+        cartLink.innerText = `Cart (Rs{cart.length})`;
     }
 }
 
