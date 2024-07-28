@@ -30,9 +30,9 @@ function displayProducts() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = products.map(product => `
         <div>
-            <h3>${product.name}</h3>
-            <p>Price: $${product.price}</p>
-            <a href="product.html?id=${product.id}">View Details</a>
+            <h3>Rs{product.name}</h3>
+            <p>Price: $Rs{product.price}</p>
+            <a href="product.html?id=Rs{product.id}">View Details</a>
         </div>
     `).join('');
 }
