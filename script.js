@@ -31,7 +31,7 @@ function displayProducts() {
     productList.innerHTML = products.map(product => `
         <div>
             <h3>${product.name}</h3>
-            <p>Price: $${product.price}</p>
+            <p>Price: Rs{product.price}</p>
             <a href="product.html?id=${product.id}">View Details</a>
         </div>
     `).join('');
@@ -44,7 +44,7 @@ function displayProductDetail() {
     if (product) {
         document.getElementById('product-detail').innerHTML = `
             <h2>${product.name}</h2>
-            <p>Price: $${product.price}</p>
+            <p>Price: Rs{product.price}</p>
             <p>Description: A great product.</p>
         `;
     }
@@ -73,7 +73,7 @@ function displayCartItems() {
         cartItems.innerHTML = cart.map((item, index) => `
             <div>
                 <h3>${item.name}</h3>
-                <p>Price: $${item.price}</p>
+                <p>Price: Rs{item.price}</p>
                 <button onclick="removeFromCart(${index})">Remove</button>
             </div>
         `).join('');
