@@ -30,7 +30,7 @@ function displayProducts() {
     const productList = document.getElementById('product-list');
     productList.innerHTML = products.map(product => `
         <div>
-            <h3>Rs{product.name}</h3>
+            <h3>${product.name}</h3>
             <p>Price: $${product.price}</p>
             <a href="product.html?id=${product.id}">View Details</a>
         </div>
@@ -43,7 +43,7 @@ function displayProductDetail() {
 
     if (product) {
         document.getElementById('product-detail').innerHTML = `
-            <h2>Rs{product.name}</h2>
+            <h2>${product.name}</h2>
             <p>Price: $${product.price}</p>
             <p>Description: A great product.</p>
         `;
@@ -72,7 +72,7 @@ function displayCartItems() {
     } else {
         cartItems.innerHTML = cart.map((item, index) => `
             <div>
-                <h3>Rs{item.name}</h3>
+                <h3>${item.name}</h3>
                 <p>Price: $${item.price}</p>
                 <button onclick="removeFromCart(${index})">Remove</button>
             </div>
@@ -92,7 +92,7 @@ function updateCartLink() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartLink = document.getElementById('cart-link');
     if (cartLink) {
-        cartLink.innerText = `Cart (Rs{cart.length})`;
+        cartLink.innerText = `Cart (${cart.length})`;
     }
 }
 
@@ -103,4 +103,3 @@ function getProducts() {
         { id: 3, name: 'Product 3', price: 30 },
     ];
 }
-
